@@ -7,5 +7,5 @@ import retrofit2.http.GET
 
 interface UserService {
     @GET("users")
-    fun getUserPosts(): Observable<Response<UserEntity>>
+    fun getUserPosts(): Observable<Response<List<UserEntity>>>
 }

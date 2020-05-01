@@ -11,7 +11,7 @@ class UserRemoteDataSource @Inject constructor(
     private val userRemote: UserRemote
 ) :
     UserDataSource {
-    override fun getUserPosts(): Observable<UserEntity> {
+    override fun getUserPosts(): Observable<List<UserEntity>> {
         return userRemote.getUserPosts()
     }
 }

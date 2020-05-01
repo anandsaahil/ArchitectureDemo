@@ -17,7 +17,7 @@ class UserRemoteImpl @Inject constructor(
     val userService: UserService
 ) : UserRemote {
 
-    override fun getUserPosts(): Observable<UserEntity> {
+    override fun getUserPosts(): Observable<List<UserEntity>> {
         return userService.getUserPosts().map {
             if (it.isSuccessful) {
                 return@map it.body()

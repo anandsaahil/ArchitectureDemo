@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.architecturedemo.utils.UIThread
 import com.example.data.BuildConfig
+import com.example.data.JobExecutor
 import com.example.data.network.RestFactory
 import com.example.data.network.interceptor.NetworkInterceptor
 import com.example.data.network.interceptor.RedirectInterceptor
@@ -13,6 +14,7 @@ import com.example.domain.repository.UserRepository
 import com.example.data.network.remote.user.UserRemote
 import com.example.data.network.service.UserService
 import com.example.domain.executor.PostExecutionThread
+import com.example.domain.executor.ThreadExecutor
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -31,6 +33,13 @@ object AppModule {
     @Provides
     fun providePostThreadExecutor(uiThread: UIThread): PostExecutionThread {
         return uiThread
+    }
+
+    @JvmStatic
+    @Singleton
+    @Provides
+    fun provideThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor {
+        return jobExecutor
     }
 
     @JvmStatic

@@ -13,10 +13,10 @@ class UserDataRepository @Inject constructor(
     private val userDataSourceFactory: UserDataSourceFactory,
     private val userDataMapper: UserDataMapper
 ) : UserRepository {
-    override fun getUserPosts(): Observable<UserDomain> {
+    override fun getUserPosts(): Observable<List<UserDomain>> {
         return userDataSourceFactory.retrieveRemoteDataSource().getUserPosts()
             .map {
-                return@map userDataMapper.mapEntityToDomain(it)
+                return@map userDataMapper.mapEntityListToDomainList(it)
             }
     }
 }

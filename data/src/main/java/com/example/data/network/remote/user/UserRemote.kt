@@ -4,5 +4,5 @@ import com.example.data.entity.UserEntity
 import io.reactivex.Observable
 
 interface UserRemote {
-    fun getUserPosts(): Observable<UserEntity>
+    fun getUserPosts(): Observable<List<UserEntity>>
 }

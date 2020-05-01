@@ -12,7 +12,7 @@ import io.reactivex.observers.DisposableObserver
 class HomeViewModel constructor(private val getAllUsersUseCase: GetAllUsersUseCase) : ViewModel() {
 
     private var navigator: HomeNavigator? = null
-    var getAllUsersLiveData: MutableLiveData<Resource<UserDomain>> = MutableLiveData()
+    var getAllUsersLiveData: MutableLiveData<Resource<List<UserDomain>>> = MutableLiveData()
 
     override fun onCleared() {
         super.onCleared()
@@ -21,12 +21,12 @@ class HomeViewModel constructor(private val getAllUsersUseCase: GetAllUsersUseCa
 
     fun getAllUsers() {
         getAllUsersLiveData.postValue(Resource(ResourceState.LOADING, null, null))
-        getAllUsersUseCase.execute(object : DisposableObserver<UserDomain>() {
+        getAllUsersUseCase.execute(object : DisposableObserver<List<UserDomain>>() {
             override fun onComplete() {
                 Log.d("api_response", "getAllUsers onComplete called")
             }
 
-            override fun onNext(data: UserDomain) {
+            override fun onNext(data: List<UserDomain>) {
                 getAllUsersLiveData.postValue(Resource(ResourceState.SUCCESS, data, null))
                 Log.d("api_response", "getAllUsers onNext called")
             }

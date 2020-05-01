@@ -12,3 +12,7 @@ A sample android app using Dagger2, RxJava, RxAndroid, Kotlin, Retrofit , Androi
 - Android Architecture Components - Lifecycle awareness has been achieved using a combination of LiveData & ViewModels
 
 - Dependency Injection - Common elements like context, networking interface, Viewmodels are injected using Dagger2.
+
+
+
+<img src="demo.gif" width="250">

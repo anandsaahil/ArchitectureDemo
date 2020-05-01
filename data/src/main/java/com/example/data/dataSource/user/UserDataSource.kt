@@ -4,5 +4,5 @@ import io.reactivex.Observable
 import java.util.*
 
 interface UserDataSource {
-    fun getUserPosts(): Observable<List<UserEntity>>
+    fun getAllUsers(): Observable<List<UserEntity>>
 }

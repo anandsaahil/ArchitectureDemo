@@ -13,6 +13,6 @@ class GetAllUsersUseCase @Inject constructor(
     postExecutionThread: PostExecutionThread
 ) : ObservableUseCase<List<UserDomain>, Unit>(threadExecutor, postExecutionThread) {
     override fun buildUseCaseObservable(params: Unit): Observable<List<UserDomain>> {
-        return userRepository.getUserPosts()
+        return userRepository.getAllUsers()
     }
 }

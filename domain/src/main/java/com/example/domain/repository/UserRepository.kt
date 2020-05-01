@@ -4,5 +4,5 @@ import com.example.domain.model.UserDomain
 import io.reactivex.Observable
 
 interface UserRepository {
-    fun getUserPosts(): Observable<List<UserDomain>>
+    fun getAllUsers(): Observable<List<UserDomain>>
 }

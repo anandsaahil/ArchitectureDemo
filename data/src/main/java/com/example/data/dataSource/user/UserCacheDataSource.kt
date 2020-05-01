@@ -6,7 +6,7 @@ import javax.inject.Singleton
 
 @Singleton
 class UserCacheDataSource @Inject constructor(): UserDataSource {
-    override fun getUserPosts(): Observable<List<UserEntity>> {
+    override fun getAllUsers(): Observable<List<UserEntity>> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

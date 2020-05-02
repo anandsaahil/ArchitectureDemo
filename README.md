@@ -1,5 +1,5 @@
 # ArchitectureDemo
-A sample android app using Dagger2, RxJava, RxAndroid, Kotlin, Retrofit , Android Navigation Component and Clean Architecture.
+A sample android app using Dagger2, RxJava, RxAndroid, Kotlin, Retrofit, Android Navigation Component and Clean Architecture.
 
 # Features
 
